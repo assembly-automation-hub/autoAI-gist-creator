@@ -95,24 +95,6 @@ autoAI-gist-creator/
 4. **Frontend-first logging and observability**
    - Timestamped log output helps users troubleshoot API, auth, and network errors quickly.
 
-```mermaid
-flowchart TD
-    A[User enters tokens + owner/repo] --> B[Frontend validates fields]
-    B --> C[GET /repos/{owner}/{repo}]
-    C --> D[Resolve default branch]
-    D --> E[GET /git/trees/{branch}?recursive=1]
-    E --> F[Select target source file]
-    F --> G[GET /contents/{path}]
-    G --> H[Decode base64 to UTF-8]
-    H --> I[Build educational prompt]
-    I --> J[Gemini generateContent]
-    J -->|success| K[Clean markdown response]
-    J -->|error| L[Try next fallback model]
-    L --> J
-    K --> M[POST /gists]
-    M --> N[Display gist URL in UI log]
-```
-
 > [!WARNING]
 > Because requests are made from the browser, this project is best used in a trusted environment. For team or production-grade usage, consider moving token handling and API proxying to a secure backend.
 
