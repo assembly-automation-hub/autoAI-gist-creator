@@ -1,11 +1,15 @@
-from flask import Flask, render_template
+from pathlib import Path
 
-app = Flask(__name__)
+from flask import Flask, send_from_directory
+
+PROJECT_ROOT = Path(__file__).resolve().parent
+
+app = Flask(__name__, static_folder="static")
 
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return send_from_directory(PROJECT_ROOT, "index.html")
 
 
 if __name__ == "__main__":
