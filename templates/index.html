@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Educational Gist Creator via Gemini</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Code Analyzer & Educational Gist Creator</h2>
+    <p>Этот скрипт автоматически найдет файл с кодом в вашем репозитории, проанализирует его через ИИ и создаст профессиональный разбор на английском языке.</p>
+
+    <label for="gh_token">GitHub Personal Access Token (права 'gist' и 'repo'):</label>
+    <input type="password" id="gh_token" placeholder="ghp_...">
+
+    <label for="gemini_token">Gemini API Key:</label>
+    <input type="password" id="gemini_token" placeholder="AIza...">
+
+    <label for="repo_path">GitHub Репозиторий (формат: owner/repo):</label>
+    <input type="text" id="repo_path" placeholder="например: OstinUA/ads.txt-app-ads.txt-sellers.json-Lines-Checker">
+
+    <button id="run_btn">Сгенерировать Code Review Gist</button>
+
+    <div id="log">Система готова. Заполните данные и нажмите кнопку.</div>
+</div>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
