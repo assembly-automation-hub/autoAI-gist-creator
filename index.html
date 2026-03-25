@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,23 +8,41 @@
 </head>
 <body>
 <div class="container">
-    <h2>Code Analyzer & Educational Gist Creator</h2>
-    <p>Этот скрипт автоматически найдет файл с кодом в вашем репозитории, проанализирует его через ИИ и создаст профессиональный разбор на английском языке.</p>
+    <h2 id="title">Code Analyzer & Educational Gist Creator</h2>
+    <p id="description">This app automatically finds a source file in your repository, analyzes it with AI, and creates a professional educational breakdown in English.</p>
 
-    <label for="gh_token">GitHub Personal Access Token (права 'gist' и 'repo'):</label>
+    <label for="language_select" id="language_label">Interface language</label>
+    <select id="language_select"></select>
+
+    <label for="gh_token" id="gh_token_label">GitHub Personal Access Token (scopes: 'gist' and 'repo'):</label>
     <input type="password" id="gh_token" placeholder="ghp_...">
 
-    <label for="gemini_token">Gemini API Key:</label>
+    <label for="gemini_token" id="gemini_token_label">Gemini API Key:</label>
     <input type="password" id="gemini_token" placeholder="AIza...">
 
-    <label for="repo_path">GitHub Репозиторий (формат: owner/repo):</label>
-    <input type="text" id="repo_path" placeholder="например: OstinUA/ads.txt-app-ads.txt-sellers.json-Lines-Checker">
+    <label for="repo_path" id="repo_path_label">GitHub repository (format: owner/repo):</label>
+    <input type="text" id="repo_path" placeholder="example: OstinUA/ads.txt-app-ads.txt-sellers.json-Lines-Checker">
 
-    <button id="run_btn">Сгенерировать Code Review Gist</button>
+    <button id="run_btn">Generate Code Review Gist</button>
 
-    <div id="log">Система готова. Заполните данные и нажмите кнопку.</div>
+    <div id="log" data-state="ready">System ready. Fill in the data and click the button.</div>
 </div>
 
+<script src="static/js/i18n/en.js"></script>
+<script src="static/js/i18n/zh.js"></script>
+<script src="static/js/i18n/es.js"></script>
+<script src="static/js/i18n/fr.js"></script>
+<script src="static/js/i18n/pt.js"></script>
+<script src="static/js/i18n/ru.js"></script>
+<script src="static/js/i18n/ja.js"></script>
+<script src="static/js/i18n/de.js"></script>
+<script src="static/js/i18n/uk.js"></script>
+<script src="static/js/i18n/pl.js"></script>
+<script src="static/js/i18n/nl.js"></script>
+<script src="static/js/i18n/kk.js"></script>
+<script src="static/js/i18n/sv.js"></script>
+<script src="static/js/i18n/cs.js"></script>
+<script src="static/js/i18n/index.js"></script>
 <script src="static/js/app.js"></script>
 </body>
 </html>
